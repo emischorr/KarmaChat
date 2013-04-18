@@ -9,7 +9,8 @@ body {
   font-size: 14px;
   color: #576574;
   border-top: 3px solid #576574;
-  background: url('bg.png')
+  background: url('bg.png');
+  height: 100%;
 }
 
 h1, h2 {
@@ -29,8 +30,10 @@ ul, ol {
 }
 
 #wrapper {
+  position: relative;
   max-width: 920px;
-  margin: 20px auto;
+  margin: 20px auto 0;
+  height: 100%;
 }
 
 header {
@@ -50,9 +53,13 @@ header {
 }
 
 #main {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 60px;
+  bottom: 20px;
   padding: 20px;
   background: #E8F0F6;
-  margin-top: 30px;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
@@ -73,4 +80,8 @@ header {
 .sub-headline {
   margin-top: -10px;
   margin-bottom: 10px;
+}
+
+#msg {
+  width: 80%;
 }
