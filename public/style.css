@@ -32,7 +32,7 @@ ul, ol {
 #wrapper {
   position: relative;
   max-width: 920px;
-  margin: 20px auto 0;
+  margin: 0 auto;
   height: 100%;
 }
 
