@@ -6,11 +6,13 @@ require 'redis'
 
 configure do
   set :server, 'thin'
-  
+
   require 'redis'
   redisUri = ENV["REDISTOGO_URL"] || 'redis://localhost:6379'
   uri = URI.parse(redisUri) 
   REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+  # use another connection for BLOCKING psubscribe
+  REDIS_SUB = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
 end
 
 conns = Hash.new {|h, k| h[k] = [] }
@@ -40,9 +42,7 @@ post '/send/:channel' do
 end
 
 Thread.new do
-  redis = Redis.connect
-
-  redis.psubscribe('message', 'message.*') do |on|
+  REDIS_SUB.psubscribe('message', 'message.*') do |on|
     on.pmessage do |match, channel, message|
       channel = channel.sub('message.', '')
 
