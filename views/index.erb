@@ -1,0 +1,20 @@
+<section id="chat"></section>
+<form accept-charset="UTF-8" action="/send/achannel" method="post" class="remote">
+  <textarea name="msg" rows="3"></textarea>
+  <input type="submit" value="send">
+</form>
+
+<script>
+  var source = new EventSource('/subscribe/achannel');
+
+  source.addEventListener('message', function (event) {
+    $('#chat').append('<div class="message">'+event.data+'</div>');
+  }, false);
+
+  $('form.remote').on('submit', function(e){
+    e.preventDefault();
+    $.post('/send/achannel', $(this).serialize(), function(response){
+
+    });
+  });
+</script>

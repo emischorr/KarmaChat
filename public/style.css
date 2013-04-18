@@ -1,0 +1,76 @@
+html {
+  height: 100%; /* fix height for IE */
+  max-height: 100%; /* fix height for other browser */
+}
+
+body {
+  background: #F2F2F2 repeat-x scroll center top;
+  font-family: 'Open Sans', verdana, tahoma, arial, helvetica, sans-serif;
+  font-size: 14px;
+  color: #576574;
+  border-top: 3px solid #576574;
+  background: url('bg.png')
+}
+
+h1, h2 {
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+#wrapper {
+  max-width: 920px;
+  margin: 20px auto;
+}
+
+header {
+  max-width: 850px;
+  min-width: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#logo {
+  float: left;
+  font-size: 36px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #576574;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.75);
+}
+
+#main {
+  padding: 20px;
+  background: #E8F0F6;
+  margin-top: 30px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+.field label {
+  font-weight: bold;
+}
+
+.info {
+  font-size: 0.9em;
+  color: #AAA; 
+}
+
+.sub-headline {
+  margin-top: -10px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,13 @@
+a { /* This is to avoid firefox from drawing ugly boxes with dotts around links */
+  outline: none;
+}
+
+html, body, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, label, div, span, pre, blockquote, p, td {
+  border: 0;
+  margin: 0;
+  padding: 0; 
+}
+
+table {
+  border-spacing: 0;
+}
