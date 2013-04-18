@@ -11,6 +11,7 @@ body {
   border-top: 3px solid #576574;
   background: url('bg.png');
   height: 100%;
+  box-sizing: border-box;
 }
 
 h1, h2 {
@@ -62,6 +63,7 @@ header {
   background: #E8F0F6;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  overflow: hidden;
 }
 
 .field {
@@ -82,10 +84,33 @@ header {
   margin-bottom: 10px;
 }
 
+#chat {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 100px;
+  overflow-y: scroll;
+}
+
 #msg-form {
-  
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  height: 60px;
 }
 
 #msg {
   width: 80%;
+  float: left;
+  height: 56px;
+  padding: 2px;
+  border: 0px;
+}
+
+#msg-form input[type="submit"] {
+  width: 100px;
+  height: 30px;
+  margin: 15px;
 }
