@@ -12,9 +12,10 @@
   }, false);
 
   $('form.remote').on('submit', function(e){
-    e.preventDefault();
     $.post('/send/achannel', $(this).serialize(), function(response){
 
     });
+    $('#msg').val(''); $('#msg').focus();
+    e.preventDefault();
   });
 </script>

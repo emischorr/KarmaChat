@@ -1,10 +1,12 @@
 # Usage: redis-cli publish message.achannel hello
-
+require 'thin'
 require 'sinatra'
 require 'erb'
 require 'redis'
 
 configure do
+  set :server, 'thin'
+  
   require 'redis'
   redisUri = ENV["REDISTOGO_URL"] || 'redis://localhost:6379'
   uri = URI.parse(redisUri) 
@@ -19,9 +21,7 @@ get '/' do
   erb :index
 end
 
-get '/subscribe/:channel' do
-  content_type 'text/event-stream'
-
+get '/subscribe/:channel', provides: 'text/event-stream' do
   stream(:keep_open) do |out|
     channel = params[:channel]
 
